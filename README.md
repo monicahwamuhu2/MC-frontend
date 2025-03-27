@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# Mindful Connect - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+Mindful Connect is a comprehensive mental wellness platform that combines AI-driven emotional support with personalized therapist matching services. The application helps users find therapists based on their unique needs and preferences while providing 24/7 AI support through Pandora, an AI mental health companion.
+![WhatsApp Image 2025-03-27 at 17 39 42_801fc585](https://github.com/user-attachments/assets/283a4311-17e4-4dd7-8f44-5770cb70c408)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **AI Chatbot (Pandora)**: 24/7 emotional support and mental health resources
+- **Therapist Matching System**
+![WhatsApp Image 2025-03-27 at 17 38 52_91e6652b](https://github.com/user-attachments/assets/9b676179-4b2c-45f8-9540-758899be3be1)
 
-### `npm test`
+-  Find therapists based on specific criteria:
+  - Concerns (anxiety, depression, etc.)
+  - Therapist gender preference
+  - Session mode (in-person, online, hybrid)
+  - Experience level
+  - Specializations
+  - Budget considerations
+  - Cultural/religious preferences
+- **Interactive UI**: Modern, responsive interface with smooth animations
+- **Multi-step Matching Process**: Guided workflow for precise therapist matching
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ![WhatsApp Image 2025-03-27 at 17 43 42_16434e3a](https://github.com/user-attachments/assets/c3f90584-ed1b-48a4-b08c-1e6c913eeef3)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: v19.0.0
+- **Material UI**: v6.4.7 for component styling
+- **Framer Motion**: v12.5.0 for animations
+- **React Router**: v7.3.0 for navigation
+- **Axios**: v1.8.3 for API requests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+src/
+├── assets/            # Images and static assets
+├── components/        # React components
+│   ├── ChatModal.js   # AI Chatbot modal component
+│   ├── features.js    # Service features section
+│   ├── footer.js      # Page footer
+│   ├── Header.js      # Navigation header
+│   ├── Hero.js        # Landing page hero section
+│   ├── howitworks.js  # Process explanation section
+│   ├── stats.js       # Statistics display
+│   ├── testimonials.js # User testimonials
+│   ├── TherapistSection.js # AI therapist feature showcase
+│   └── steps/         # Therapist matching questionnaire steps
+├── pages/             # Page components
+├── styles/            # CSS files
+├── contexts/          # React contexts (e.g., ThemeContext)
+└── utils/             # Utility functions
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/mindful-connect-frontend.git
+   cd mindful-connect-frontend
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
+   ```
+   npm start
+   ```
 
-## Learn More
+4. The application will be available at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file in the root directory with the following variables:
 
-### Code Splitting
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Key Components
 
-### Analyzing the Bundle Size
+### Chatbot Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The platform features an AI mental health companion named Pandora, accessible through a chat interface:
 
-### Making a Progressive Web App
+```jsx
+<ChatModal isOpen={isChatOpen} onClose={closeChat} />
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Therapist Matching System
 
-### Advanced Configuration
+The application offers a multi-step process to match users with therapists:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```jsx
+// TherapistMatching.js
+const steps = [
+  "Your Concern",
+  "Therapist Gender",
+  "Age Range",
+  "Marital Status",
+  "Session Mode",
+  "Experience Level",
+  "Specialization",
+  "Insurance",
+  "Budget",
+  "Cultural Needs",
+];
+```
 
-### Deployment
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To build the application for production:
 
-### `npm run build` fails to minify
+```
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The build files will be created in the `build/` directory, ready to be deployed to a static hosting service like Vercel, Netlify, or AWS S3.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Open a pull request
+
+## License
+
+[MIT License](LICENSE)
+
+## Contact
+
+For questions or support, please contact [My email](monicahwamuhu2@gmail.com)
