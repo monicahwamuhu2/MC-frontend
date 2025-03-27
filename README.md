@@ -1,6 +1,6 @@
 # Mindful Connect - Frontend
 
-
+Project Live link: [Link](https://mc-frontend-8848.onrender.com)
 
 ## Overview
 
@@ -10,7 +10,11 @@ Mindful Connect is a comprehensive mental wellness platform that combines AI-dri
 ## Features
 
 - **AI Chatbot (Pandora)**: 24/7 emotional support and mental health resources
+
+  ![WhatsApp Image 2025-03-27 at 17 46 14_4bb8a8fc](https://github.com/user-attachments/assets/994a817e-0c0f-40a2-a3df-973e4d933fd6)
+
 - **Therapist Matching System**
+  
 ![WhatsApp Image 2025-03-27 at 17 38 52_91e6652b](https://github.com/user-attachments/assets/9b676179-4b2c-45f8-9540-758899be3be1)
 
 -  Find therapists based on specific criteria:
