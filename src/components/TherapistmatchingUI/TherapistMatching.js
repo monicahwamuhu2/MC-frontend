@@ -95,9 +95,9 @@ const TherapistMatching = () => {
   const fetchTherapists = async () => {
     setLoading(true);
     setError("");
-
+  
     const experienceNumber = parseInt(formData.experienceLevel, 10) || 0;
-
+  
     const queryParams = new URLSearchParams({
       specialty: formData.specialization,
       gender: formData.gender,
@@ -108,11 +108,15 @@ const TherapistMatching = () => {
       budget: formData.budget,
       culturalPreference: formData.culturalSensitivity
     }).toString();
-
+  
     try {
-      const response = await fetch(`http://localhost:5000/api/therapists?${queryParams}`);
+     
+      
+      // With this line
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/therapists?${queryParams}`);
+      
       if (!response.ok) throw new Error("Failed to fetch therapists");
-
+  
       const data = await response.json();
       
       localStorage.setItem('matchedTherapists', JSON.stringify(data.data));
